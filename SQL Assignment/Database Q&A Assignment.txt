@@ -1,0 +1,113 @@
+1> What do you understand By Database :  
+A database is an organized set of logically connected data. The information transforms into helpful knowledge, structured and maintained to fit the user's needs. Apart from storing the data itself, a database also keeps the relationships between data points.
+
+2>What is Normalization? 
+->Types of Normalization in DBMS. 1. First Normal Form. The table or relation is said to be in First Normal Form if it does not contain any multi-valued or composite attributes. So the ... 2. Second Normal Form. 3. Third Normal Form. 4. Boyce-Codd Normal Form.
+
+3>What is Difference between DBMS and RDBMS?
+->No.	DBMS	RDBMS
+	1)	DBMS applications store data as file.	RDBMS applications store data in a tabular form.
+	2)	In DBMS, data is generally stored in either a hierarchical form or a navigational form.	In RDBMS, the tables have an identifier called 	primary 	key and the data values are stored in the form of tables.
+	3)	Normalization is not present in DBMS.	Normalization is present in RDBMS.
+	4)	DBMS does not apply any security with regards to data manipulation.	RDBMS defines the integrity constraint for the purpose of ACID 	(Atomocity, Consistency, Isolation and Durability) property.
+	5)	DBMS uses file system to store data, so there will be no relation between the tables.	in RDBMS, data values are stored in the form of 	tables, so a relationship between these data values will be stored in the form of a table as well.
+	6)	DBMS has to provide some uniform methods to access the stored information.	RDBMS system supports a tabular structure of the data and a 		relationship between them to access the stored information.
+	7)	DBMS does not support distributed database.	RDBMS supports distributed database.
+	8)	DBMS is meant to be for small organization and deal with small data. it supports single user.	RDBMS is designed to handle large amount of 	data. it supports multiple users.
+	9)	Examples of DBMS are file systems, xml etc.	Example of RDBMS are mysql, postgre, sql server, oracle etc.
+
+4>What is MF Cod Rule of RDBMS Systems? 
+->Dr Edgar F. Codd, after his extensive research on the Relational Model of database systems, came up with twelve rules of his own, which according to him, a database must obey in order to be regarded as a true relational database.
+
+These rules can be applied on any database system that manages stored data using only its relational capabilities. This is a foundation rule, which acts as a base for all the other rules.
+
+Rule 1: Information Rule
+The data stored in a database, may it be user data or metadata, must be a value of some table cell. Everything in a database must be stored in a table format.
+
+Rule 2: Guaranteed Access Rule
+Every single data element (value) is guaranteed to be accessible logically with a combination of table-name, primary-key (row value), and attribute-name (column value). No other means, such as pointers, can be used to access data.
+
+Rule 3: Systematic Treatment of NULL Values
+The NULL values in a database must be given a systematic and uniform treatment. This is a very important rule because a NULL can be interpreted as one the following − data is missing, data is not known, or data is not applicable.
+
+Rule 4: Active Online Catalog
+The structure description of the entire database must be stored in an online catalog, known as data dictionary, which can be accessed by authorized users. Users can use the same query language to access the catalog which they use to access the database itself.
+
+Rule 5: Comprehensive Data Sub-Language Rule
+A database can only be accessed using a language having linear syntax that supports data definition, data manipulation, and transaction management operations. This language can be used directly or by means of some application. If the database allows access to data without any help of this language, then it is considered as a violation.
+
+Rule 6: View Updating Rule
+All the views of a database, which can theoretically be updated, must also be updatable by the system.
+
+Rule 7: High-Level Insert, Update, and Delete Rule
+A database must support high-level insertion, updation, and deletion. This must not be limited to a single row, that is, it must also support union, intersection and minus operations to yield sets of data records.
+
+Rule 8: Physical Data Independence
+The data stored in a database must be independent of the applications that access the database. Any change in the physical structure of a database must not have any impact on how the data is being accessed by external applications.
+
+Rule 9: Logical Data Independence
+The logical data in a database must be independent of its user’s view (application). Any change in logical data must not affect the applications using it. For example, if two tables are merged or one is split into two different tables, there should be no impact or change on the user application. This is one of the most difficult rule to apply.
+
+Rule 10: Integrity Independence
+A database must be independent of the application that uses it. All its integrity constraints can be independently modified without the need of any change in the application. This rule makes a database independent of the front-end application and its interface.
+
+Rule 11: Distribution Independence
+The end-user must not be able to see that the data is distributed over various locations. Users should always get the impression that the data is located at one site only. This rule has been regarded as the foundation of distributed database systems.
+
+Rule 12: Non-Subversion Rule
+If a system has an interface that provides access to low-level records, then the interface must not be able to subvert the system and bypass security and integrity constraints.
+
+5>What do you understand By Data Redundancy?
+->Data redundancy occurs when the same piece of data is stored in two or more separate places and is a common occurrence in many businesses. As more companies are moving  away from siloed data to using a central repository to store information, they are finding that their database is filled with inconsistent duplicates of the same entry. Although it can be challenging to reconcile — or even benefit from — duplicate data entries, understanding how to reduce and track data redundancy efficiently can help mitigate long-term inconsistency issues for your business. 
+
+6>What is DDL Interpreter?
+->It interprets DDL statements and record them in tables containing metadata.
+
+7>What is DML Compiler in SQL? 
+->DML compiler translates DML statements in a query language into a low-level instruction and the generated instruction can be understood by Query Evaluation Engine
+
+8>What is SQL Key Constraints writing an Example of SQL Key Constraints
+->SQL constraints are used to specify rules for the data in a table.
+
+Constraints are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the table. If there is any violation between the constraint and the data action, the action is aborted.
+
+Constraints can be column level or table level. Column level constraints apply to a column, and table level constraints apply to the whole table.
+
+The following constraints are commonly used in SQL:
+
+PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+FOREIGN KEY - Prevents actions that would destroy links between tables
+
+
+9>What is save Point? How to create a save Point write a Query? 
+->Savepoint is a command in SQL that is used with the rollback command.
+
+ex:mysql> CREATE TABLE student(ID INT, Name VARCHAR(20), Percentage INT, Location VARCHAR(20), DateOfBirth DATE);  
+
+10>What is trigger and how to create a Trigger in SQL? 
+->A trigger is a piece of code executed automatically in response to a specific event occurred on a table in the database.
+
+A trigger is always associated with a particular table. If the table is deleted, all the associated triggers are also deleted automatically.
+
+A trigger is invoked either before or after the following event:
+
+INSERT – when a new row is inserted
+UPDATE – when an existing row is updated
+DELETE – when a row is deleted.
+
+ex:CREATE TRIGGER trigger_name [BEFORE|AFTER] event
+ON table_name trigger_type
+BEGIN
+  -- trigger_logic
+END;
+
+
+
+
+ 
+
+
+
+
+
+
