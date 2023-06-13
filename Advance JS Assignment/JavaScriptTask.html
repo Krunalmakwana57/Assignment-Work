@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Style of page starts */
+      body {
+        width: 80vw;
+        margin: auto;
+        font-family: sans-serif;
+        font-size: 2rem;
+      }
+      table {
+        margin-top: 100px;
+      }
+      table > * {
+        text-align: center;
+      }
+      th,
+      td {
+        padding: 25px 30px;
+        border: 2px solid black;
+      }
+      td input {
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+      }
+      button {
+        font-size: 1.5rem;
+        background-color: rgb(52, 37, 9);
+        color: white;
+        padding: 0.5rem 1rem;
+      }
+      button:hover {
+        cursor: pointer;
+        background-color: rgb(193, 128, 7);
+        color: white;
+      }
+      /* Style of page ends */
+    </style>
+  </head>
+  <body>
+    <!-- html code in table format -->
+    <table>
+      <tr>
+        <th>Product Info</th>
+        <th>Quantity</th>
+        <th>Price(Per Unit)</th>
+        <th>Price(Sub Total)</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Product 1</td>
+        <td>
+          <!-- onclick function when number will be increase than total will be calculated -->
+          <input type="number" id="input" onclick="f1()" />
+        </td>
+        <td>$29.99</td>
+        <td id="total"></td>
+        <!-- This is button when it is clicked the input value will be zero and total will be 0 -->
+        <td><button onclick="emptyamt()">Remove</button></td>
+      </tr>
+      <tr>
+        <td>Product 2</td>
+        <td>
+          <!-- same work as above input field -->
+          <input type="number" id="input1" onclick="f2()" />
+        </td>
+        <td>$12.99</td>
+        <td id="total1"></td>
+        <!-- same work as above button to reset qty and value -->
+        <td><button onclick="emptyamt1()">Remove</button></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <!-- this td will show total calculated amount -->
+        <td id="subtotalamt"></td>
+        <td></td>
+      </tr>
+    </table>
+    <!-- html code ends -->
+    <script>
+      // javascript code begins
+      // creating varible by selecting html elements with document.getElementById
+      var field1Input = document.getElementById("input");
+      var field2Input = document.getElementById("input1");
+      var totalInput = document.getElementById("subtotalamt");
+      // Event listener for changes in field1
+      field1Input.addEventListener("input", calculateTotal);
+
+      // Event listener for changes in field2
+      field2Input.addEventListener("input", calculateTotal);
+      // this function will calculate the total amount of both product
+      function calculateTotal() {
+        let p1data1 = parseFloat(field1Input.value);
+        let finalamt1 = p1data1 * 29.99;
+        let p1data2 = parseFloat(field2Input.value);
+        let finalamt2 = p1data2 * 12.99;
+
+        if (finalamt1 > 0 || finalamt2 > 0) {
+          var total = finalamt1 + finalamt2;
+        }
+
+        if (total > 0) {
+          totalInput.innerHTML = "$" + total;
+        } else {
+          totalInput.innerHTML = 0;
+        }
+      }
+      function f1() {
+        // This function will give total amount for product 1 by multiplying its qty with base price per unit
+        if (field1Input.value > 0) {
+          let p1data = field1Input.value;
+          let finalamt = "$" + p1data * 29.99;
+          document.getElementById("total").innerHTML = finalamt;
+        } else {
+          field1Input.value = 0;
+          document.getElementById("total").innerText = 0;
+        }
+      }
+      //   This function will remove qty by clicking a button
+      function emptyamt() {
+        field1Input.value = 0;
+        document.getElementById("total").innerText = 0;
+        let p1data1 = parseFloat(field1Input.value);
+        let finalamt1 = p1data1 * 29.99;
+        let p1data2 = parseFloat(field2Input.value);
+        let finalamt2 = p1data2 * 12.99;
+        if (finalamt1 <= 0 && finalamt2 <= 0) {
+          totalInput.innerHTML = 0;
+        } else {
+          totalInput.innerHTML = "$" + total;
+        }
+      }
+      // This function will give total amount for product 2 by multiplying its qty with base price per unit
+      function f2() {
+        if (field2Input.value > 0) {
+          let p1data = field2Input.value;
+          let finalamt = "$" + p1data * 12.99;
+          document.getElementById("total1").innerHTML = finalamt;
+        } else {
+          field2Input.value = 0;
+          document.getElementById("total1").innerText = 0;
+        }
+      }
+      //   This function will remove qty by clicking a button
+      function emptyamt1() {
+        field2Input.value = 0;
+        document.getElementById("total1").innerText = 0;
+        let p1data1 = parseFloat(field1Input.value);
+        let finalamt1 = p1data1 * 29.99;
+        let p1data2 = parseFloat(field2Input.value);
+        let finalamt2 = p1data2 * 12.99;
+        if (finalamt1 <= 0 && finalamt2 <= 0) {
+          totalInput.innerHTML = 0;
+        } else {
+          totalInput.innerHTML = "$" + total;
+        }
+      }
+    </script>
+  </body>
+</html>
