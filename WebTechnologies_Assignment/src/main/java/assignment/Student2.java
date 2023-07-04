@@ -1,0 +1,31 @@
+package assignment;
+
+public class Student2 {
+	    private int studentId;
+	    private String studentName;
+	    private Address address;
+		public int getStudentId() {
+			return studentId;
+		}
+		public void setStudentId(int studentId) {
+			this.studentId = studentId;
+		}
+		public String getStudentName() {
+			return studentName;
+		}
+		public void setStudentName(String studentName) {
+			this.studentName = studentName;
+		}
+		public Address getAddress() {
+			return address;
+		}
+		public void setAddress(Address address) {
+			this.address = address;
+		}
+		@Override
+		public String toString() {
+			return "Student2 [studentId=" + studentId + ", studentName=" + studentName + ", address=" + address + "]";
+		}
+	    
+}
+
