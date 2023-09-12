@@ -1,0 +1,13 @@
+INDEX VERSION 1.134
+C:\Users\Krunal Makwana\OneDrive\Desktop\Complete_Adv_Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2136333752.index
+\SpringCore\src\main\resources
+C:\Users\Krunal Makwana\OneDrive\Desktop\Complete_Adv_Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\893552416.index
+\SpringMVC\src\main\resources
+C:\Users\Krunal Makwana\OneDrive\Desktop\Complete_Adv_Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2680647999.index
+\AdvJava\src\main\java
+C:\Users\Krunal Makwana\OneDrive\Desktop\Complete_Adv_Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1686169984.index
+\SpringMVC\src\main\resources
+C:\Users\Krunal Makwana\OneDrive\Desktop\Complete_Adv_Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2021208288.index
+\SpringAssignment\src\main\resources
+C:\Users\Krunal Makwana\OneDrive\Desktop\Complete_Adv_Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\192589377.index
+\SpringORM\src\main\resources
